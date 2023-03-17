@@ -1,0 +1,40 @@
+
+.screen-borders{
+    display: flexbox;
+    justify-content: center;
+    height: 515px;
+    width: 550px;
+    border: 1px solid #333;
+    margin: 0 auto;
+    /* background: #f8f8f8; */
+}
+
+.dvd-player{
+    background-image: url(sources/dvd_player_icon.png);    
+    position: relative;
+    height: 30px;
+    width: 60px;
+    background-size: cover;
+    animation: moveX 6s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+    animation-fill-mode: forwards;
+
+}
+
+.dvd-player::after{
+    animation:inherit;
+    animation-direction: reverse;
+    background-color: red;
+}
+
+.dvd-player::before{
+    background-color: black;
+}
+
+@keyframes moveY {
+    from { top: 0} to { top: 500px}
+    99% {background-color: navajowhite;}
+    100% {background-color: black;}
+}
+@keyframes moveX {
+    from { left: 0; } to { left: 500px; }
+}    
